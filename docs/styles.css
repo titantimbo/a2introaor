@@ -1,0 +1,51 @@
+.author-photo {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #e0e0e0;
+  margin-bottom: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.author-photo:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Flexbox layout for centered content */
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 20px; /* Add space between rows */
+}
+
+/* Styling for author name */
+.column strong {
+  font-size: 1.2em;
+  color: #333; /* Darker text for contrast */
+  margin-top: 5px;
+}
+
+/* Styling for LinkedIn link */
+.column a {
+  color: #0077b5; /* LinkedIn blue */
+  font-weight: bold;
+  text-decoration: none;
+  margin-top: 5px;
+}
+
+.column a:hover {
+  text-decoration: underline;
+  color: #005582; /* Darken on hover */
+}
+
+/* Responsive spacing between columns */
+.columns {
+  gap: 40px;
+  display: flex;
+  flex-wrap: wrap; /* Allows wrapping to new rows if needed */
+  justify-content: center; /* Center the entire row */
+}

@@ -1,0 +1,37 @@
+[
+  {
+    "objectID": "usa.html",
+    "href": "usa.html",
+    "title": "O Caso Americano",
+    "section": "",
+    "text": "O artigo “O Blue Shift na Eleição de 2020”, escrito por Charles Stewart, analisa o fenômeno conhecido como “blue shift” observado durante as eleições presidenciais dos Estados Unidos em 2020. O termo refere-se à tendência de os resultados eleitorais mudarem em favor dos candidatos democratas à medida que a contagem de votos por correio e provisórios é concluída.\nStewart utiliza dados eleitorais de diversos estados-chave para examinar a discrepância entre os resultados iniciais e finais. A análise considera fatores como:\n\nProcessamento de votos por correio: Estados com políticas diferentes sobre quando e como contar votos antecipados.\nImpacto da pandemia: Aumento significativo no uso de votos por correio devido à COVID-19.\nTendências partidárias: Preferências distintas entre eleitores que votaram pessoalmente e aqueles que votaram por correio.\n\nO estudo identifica que o “blue shift” foi mais pronunciado em estados onde os votos por correio foram contabilizados após o dia da eleição. Os principais achados incluem:\n\nDemocratas preferem votos por correio: Houve uma tendência maior de eleitores democratas utilizarem votos por correio.\nVariação entre estados: Estados como Pensilvânia e Wisconsin exibiram blue shifts mais significativos devido às suas políticas de contagem.\nNenhuma evidência de fraude: As mudanças nos resultados são atribuídas a procedimentos normais de contagem, não a irregularidades.\n\nCharles Stewart conclui que o “blue shift” é um fenômeno previsível resultante das variações nos métodos de votação e contagem de votos. Ele destaca a importância de educar o público sobre esse processo para evitar desinformação e reforçar a confiança nas eleições."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Eleições Brasileiras - Distribuição dos Votos ao Longo da Apuração",
+    "section": "",
+    "text": "Em todas as eleições, há dinâmicas complexas que determinam os resultados finais, e um fenômeno que tem chamado atenção recentemente é o “blue shift”. Esse termo, que se originou no cenário político norte-americano, descreve uma tendência onde os resultados finais de uma eleição se movem em direção aos candidatos democratas à medida que mais votos são contados, especialmente votos de regiões urbanas e votos feitos antecipadamente ou pelos Correios. Acadêmicos americanos atribuem esse efeito a uma série de fatores. Dentre eles:\n\nCondados maiores tendem a ser mais democratas e seus votos demoram mais para serem apurados.\nA maioria dos votos enviados pelos correios americanos são democratas. Esses votos demoram mais a serem apurados.\n\nNosso objetivo é investigar se há evidências de um fenômeno semelhante nas eleições brasileiras.\nEste site tem como objetivo explorar essa questão, aplicando uma série de métodos estatísticos para analisar os resultados eleitorais em diferentes regiões do Brasil. Queremos entender como a contagem de votos evolui ao longo do tempo em diferentes estados e cidades e se há um padrão consistente que favorece um candidato mais democrata na fase final da contagem.\nAlém disso, abordaremos questões como:\n\nComo o comportamento dos eleitores brasileiros se assemelha ou difere dos padrões observados em outros países?\nExiste um efeito significativo relacionado ao tempo e ao tipo de votos (urnas eletrônicas, votos antecipados, etc.)?\nQuais regiões do Brasil mostram um padrão de “blue shift” mais forte?\n\nEste estudo é inspirado por análises como as de Curiel, Stewart III, e Williams (2020), que examinaram o “blue shift” nas eleições norte-americanas de 2020. Você pode acessar o paper completo aqui."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Sobre",
+    "section": "",
+    "text": "Este site foi elaborado como uma tarefa para a disciplina de Introdução ao R da FGV EPGE. A disciplina é ministrada pelo professor Diogo Tavares Robaina. A elaboração do site foi feita pelos alunos:\n\n\n\nFernando Puppin\nLinkedIn\n\n\nJoanna Knop Meire\nLinkedIn\n\n\nLuiz Filipe Peres\nLinkedIn\n\n\nRodrigo Peixoto Timbó\nLinkedIn"
+  },
+  {
+    "objectID": "br.html",
+    "href": "br.html",
+    "title": "O Caso Brasileiro",
+    "section": "",
+    "text": "Background histórico\nNo Brasil, muito por conta do uso das urnas eletrônicas, os resultados das eleições costumam ser reportados com muito mais velocidade. Mesmo assim, surge a dúvida de que direção o viés dos votos durante a apuração segue, caso presente. Atualmente, a apuração dos votos leva cerca de três horas. Nesta seção, analisaremos a presença (ou não) desse viés e como ele se comporta no Brasil nos níveis estaduais no segundo turno das eleições presidenciais de 2022.\n\n\nA base de dados\nA base de dados utlizada foi elaborada pelo Wesley Cota. A base foi feita por um “scrapper” durante a apuração dos votos, retirando os dados a nível de seção eleitoral diretamente do site do TSE. Temos acesso aos dados de:\n\ndata e horário\nvotos Lula e votos Bolsonaro\nseções totalizadas e total de seções\neleitores e total de eleitores\ncomparecimento\ntotal de votos\ncaracterística dos votos (abstenção, votos válidos, votos nulos, votos brancos)\nestado\n\n\n\nEvolução da apuração\n\n\n\n\n\n\nComparando a velocidade da apuração com os EUA, fica evidente a efetividade do sistema de urnas eletrônicas. Em cerca de 3 horas, praticamente todos os estados já estão decididos e/ou em um nível de apuração bem alto (&gt;95%).\n\n\n\n\n\n\nO gap entre a vantagem do Lula e a sua vantagem (ou desvantagem) final começa bem disperso. A partir das 18:00h, o gap se estreita, ficando entre -10% e 10%. 45 minutos depois, praticamente todos os estados acabam convergindo para sua porcentagem final.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDiferente do caso dos EUA, o desvio da porcentagem final converge muito mais rapidamente a zero. Além disso, não há um padrão claro de viés por região e também não se enxerga um desvio para um dos lados políticos (Lula ou Bolsonaro). Isso acaba reforçando o ponto de que, com a presença de uma tecnologia de apuração muito mais refinada e desenvolvida, vieses durante a mesma acabam desaparecendo.\n\n\nConclusão\nA partir dos graficos acima, não é possível apoiar a afrimação de que existe algum viés durante a apuração dos votos no brasil em uma escala estadual e regional. Grande parte disso, dá-se pela existência de uma tecnologia avançada para a apuração dos votos (urnas eletrônicas)"
+  },
+  {
+    "objectID": "ref.html",
+    "href": "ref.html",
+    "title": "Referências",
+    "section": "",
+    "text": "Stewart, C. (2021). The Blue Shift in the 2020 Election. Journal of Election Studies.\nTribunal Superior Eleitoral (TSE). Disponível em: https://www.tse.jus.br. Acesso em: 10 nov. 2024.\nOpenAI. ChatGPT. Disponível em: https://openai.com/blog/chatgpt. Acesso em: 10 nov. 2024.\nQuarto. Documentação Oficial. Disponível em: https://quarto.org. Acesso em: 10 nov. 2024.\nR Core Team. (2023). R: A Language and Environment for Statistical Computing. R Foundation for Statistical Computing, Vienna, Austria. Disponível em: https://www.r-project.org.\nGoverno Federal do Brasil. Portal Gov.br. Disponível em: https://www.gov.br. Acesso em: 10 nov. 2024.\nGitHub. Plataforma de Hospedagem de Código. Disponível em: https://github.com. Acesso em: 10 nov. 2024."
+  }
+]
