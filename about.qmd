@@ -24,6 +24,17 @@ Este site foi elaborado como uma tarefa para a disciplina de **Introdução ao R
 
 ::: {.column width="33%"}
 
+![](autores/joao.png){.author-photo}
+
+**João Pedro Gabrich**
+
+[LinkedIn](https://www.linkedin.com/in/jo%C3%A3o-pedro-gabrich-8b9197289/)
+
+:::
+
+
+::: {.column width="33%"}
+
 ![](autores/joanna.png){.author-photo}
 
 **Joanna Knop Meire**
