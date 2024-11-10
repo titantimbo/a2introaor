@@ -1,0 +1,199 @@
+---
+title: "O Caso Brasileiro" 
+format: html 
+editor: visual 
+title-block-banner: brazil.png 
+editor_options:   
+  chunk_output_type: console
+---
+
+### Background histórico
+
+No Brasil, muito por conta do uso das urnas eletrônicas, os resultados das eleições costumam ser reportados com muito mais velocidade. Mesmo assim, surge a dúvida de que direção o viés dos votos durante a apuração segue, caso presente. Atualmente, a apuração dos votos leva cerca de três horas. Nesta seção, analisaremos a presença (ou não) desse viés e como ele se comporta no Brasil nos níveis estaduais no segundo turno das eleições presidenciais de 2022.
+
+### A base de dados
+
+A [base de dados](https://github.com/wcota/br_eleicoes_2022_2T/tree/main/municipios "br_eleicoes_2022_2T") utlizada foi elaborada pelo [Wesley Cota](https://github.com/wcota/br_eleicoes_2022_2T "Github - Wesley Cota"). A base foi feita por um "scrapper" durante a apuração dos votos, retirando os dados a nível de seção eleitoral diretamente do site do [TSE](https://www.tse.jus.br/ "TSE"). Temos acesso aos dados de:
+
+-   data e horário
+
+-   votos Lula e votos Bolsonaro
+
+-   seções totalizadas e total de seções
+
+-   eleitores e total de eleitores
+
+-   comparecimento
+
+-   total de votos
+
+-   característica dos votos (abstenção, votos válidos, votos nulos, votos brancos)
+
+-   estado
+
+### Evolução da apuração
+
+```{r Evolução da apuração}
+#| echo: FALSE
+#| message: FALSE
+#| warning: FALSE
+
+library(tidyverse)
+library(data.table)
+library(plotly)
+
+data <- fread("combined_data.csv") %>% 
+  as_tibble()
+
+DF <- data %>% 
+  group_by(estado) %>% 
+  reframe(date = dmy_hm(date), pct_votos_apurados = votos_validos/max(votos_validos))
+
+
+plot_ly(DF, x = ~date, y = ~pct_votos_apurados, color = ~estado, type = 'scatter', mode = 'lines') %>%
+  layout(
+    xaxis = list(
+      title = "Horário",
+      tickformat = "%H:%M",
+      dtick = 2700000  # 45 minutes in milliseconds
+    ),
+    yaxis = list(
+      title = "Porcentagem de votos apurados",
+      tickformat = ".0%",  # Format y-axis as percentage
+      range = c(0, 1)      # Limit range to 0-1 for percentage scaling
+    ),
+    showlegend = TRUE
+  )
+
+```
+
+Comparando a velocidade da apuração com os EUA, fica evidente a efetividade do sistema de urnas eletrônicas. Em cerca de 3 horas, praticamente todos os estados já estão decididos e/ou em um nível de apuração bem alto (\>95%).
+
+```{r}
+#| echo: FALSE
+#| message: FALSE
+#| warning: FALSE
+
+data <- fread("votos_por_candidato.csv") %>% 
+  as_tibble() %>% 
+  select(date, estado, cand, votos) %>% 
+  pivot_wider(id_cols = c(date, estado), names_from = cand, values_from = votos) %>% 
+  mutate(Lula_pct = (Lula)/(Bolsonaro + Lula),
+         Bolsonaro_pct = (Bolsonaro)/(Bolsonaro + Lula)) %>% 
+  mutate(lula_lead = Lula_pct - Bolsonaro_pct)
+
+DF <- data %>% 
+  group_by(estado) %>% 
+  reframe(date, delta = lula_lead - lula_lead[match(max(date), date)], lula_lead)
+
+plot_ly(DF, x = ~date, y = ~delta, color = ~estado, type = 'scatter', mode = 'lines') %>%
+  layout(
+    xaxis = list(
+      title = "Horário",
+      tickformat = "%H:%M",
+      dtick = 2700000  # 45 minutes in milliseconds
+    ),
+    yaxis = list(
+      title = "Desvio da porcentagem final de votos pro-Lula",
+      tickformat = ".0%",  # Format y-axis as percentage
+      range = c(-1, 1)      # Limit range to 0-1 for percentage scaling
+    ),
+    showlegend = TRUE
+  )
+```
+
+O gap entre a vantagem do Lula e a sua vantagem (ou desvantagem) final começa bem disperso. A partir das 18:00h, o gap se estreita, ficando entre -10% e 10%. 45 minutos depois, praticamente todos os estados acabam convergindo para sua porcentagem final.
+
+```{r}
+#| echo: FALSE
+#| message: FALSE
+#| warning: FALSE
+
+library(sf)
+library(ggplot2)
+library(plotly)
+library(rnaturalearth)
+library(rnaturalearthdata)
+library(stringi)
+
+# Carregando os dados
+data <- fread("votos_por_candidato.csv") %>% 
+  as_tibble() %>% 
+  select(date, estado, cand, votos) %>% 
+  pivot_wider(names_from = cand, values_from = votos) %>% 
+  mutate(
+    date = as.POSIXct(date, format="%Y-%m-%d %H:%M:%S"),
+    Lula_pct = Lula / (Bolsonaro + Lula),
+    Bolsonaro_pct = Bolsonaro / (Bolsonaro + Lula),
+    lula_lead = Lula_pct - Bolsonaro_pct
+  )
+
+# Processando os dados
+DF <- data %>% 
+  arrange(date) %>%
+  group_by(estado) %>% 
+  mutate(
+    final_lula_lead = lula_lead[which.max(date)],
+    delta = lula_lead - final_lula_lead
+  ) %>%
+  ungroup() %>% 
+  drop_na()
+
+# Definindo limites consistentes para a escala de cores
+max_abs_delta <- 0.3
+delta_limits <- c(-max_abs_delta, max_abs_delta)
+
+# Carregando o shapefile dos estados do Brasil
+brazil_states <- ne_states(country = "Brazil", returnclass = "sf") %>%
+  mutate(estado = toupper(stri_trans_general(name, "Latin-ASCII")))
+
+# Função para gerar os mapas
+generate_map <- function(DF, time_label, time_cutoff, delta_limits) {
+  
+  DF_time <- DF %>%
+    mutate(estado = toupper(stri_trans_general(estado, "Latin-ASCII"))) %>% 
+    group_by(estado) %>% 
+    filter(date >= as.POSIXct(time_cutoff)) %>% 
+    filter(date == min(date)) %>% 
+    ungroup()
+  
+  brazil_map_data <- brazil_states %>%
+    left_join(DF_time, by = "estado")
+  
+  plot <- ggplot(data = brazil_map_data) +
+    geom_sf(aes(fill = delta, text = paste0("Estado: ", estado, "<br>",
+                                            "Desvio: ", sprintf("%.2f%%", delta * 100)))) +
+    scale_fill_gradient2(
+      limits = delta_limits,
+      low = "lightgreen",
+      mid = "white",
+      high = "red",
+      midpoint = 0,
+      na.value = "grey90",
+      name = "Desvio (%)"
+    ) +
+    theme_minimal() +
+    labs(
+      title = paste0("Desvio da % Lula final (", time_label, " de apuração)")
+    ) +
+    theme(
+      legend.position = "right",
+      plot.title = element_text(hjust = 0.5)
+    )
+  
+  ggplotly(plot, tooltip = "text")
+}
+
+# Gerando os mapas
+generate_map(DF, "30 minutos", "2022-10-30 14:30:00", delta_limits)
+generate_map(DF, "1 hora", "2022-10-30 15:00:00", delta_limits)
+generate_map(DF, "2 horas", "2022-10-30 16:00:00", delta_limits)
+generate_map(DF, "3 horas", "2022-10-30 17:00:00", delta_limits)
+
+```
+
+Diferente do caso dos EUA, o desvio da porcentagem final converge muito mais rapidamente a zero. Além disso, não há um padrão claro de viés por região e também não se enxerga um desvio para um dos lados políticos (Lula ou Bolsonaro). Isso acaba reforçando o ponto de que, com a presença de uma tecnologia de apuração muito mais refinada e desenvolvida, vieses durante a mesma acabam desaparecendo.
+
+### Conclusão
+
+A partir dos graficos acima, não é possível apoiar a afrimação de que existe algum viés durante a apuração dos votos no brasil em uma escala estadual e regional. Grande parte disso, dá-se pela existência de uma tecnologia avançada para a apuração dos votos (urnas eletrônicas)

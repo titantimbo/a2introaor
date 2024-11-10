@@ -1,0 +1,30 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Blue Shift nas eleições brasileiras"
+  navbar:
+    left:
+      - href: index.qmd
+        text: "Introdução"
+      - href: usa.qmd
+        text: "EUA"
+      - href: br.qmd
+        text: "Brasil"
+      - href: ref.qmd
+        text: "Referências"
+      - href: about.qmd
+        text: "Sobre"
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+editor: visual
+
+sidebar:
+  contents: auto
+

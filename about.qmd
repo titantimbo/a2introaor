@@ -1,0 +1,55 @@
+---
+title: "Sobre"
+editor_options: 
+  chunk_output_type: console
+format:
+  html:
+    css: styles.css
+    fig-format: png
+---
+
+Este site foi elaborado como uma tarefa para a disciplina de **Introdução ao R** da FGV EPGE. A disciplina é ministrada pelo professor [Diogo Tavares Robaina](https://epge.fgv.br/pt/professor/diogo-tavares-robaina). A elaboração do site foi feita pelos alunos:
+
+::: {.columns}
+
+::: {.column width="33%"}
+
+![](autores/fp.jpg){.author-photo}
+
+**Fernando Puppin**
+
+[LinkedIn](https://www.linkedin.com/in/fernandopuppin/)
+
+:::
+
+::: {.column width="33%"}
+
+![](autores/joanna.png){.author-photo}
+
+**Joanna Knop Meire**
+
+[LinkedIn](https://www.linkedin.com/in/joannakm/)
+
+:::
+
+::: {.column width="33%"}
+
+![](autores/lf.jpg){.author-photo}
+
+**Luiz Filipe Peres**
+
+[LinkedIn](https://www.linkedin.com/in/luiz-filipe-peres/)
+
+:::
+
+::: {.column width="33%"}
+
+![](autores/rodrigo.png){.author-photo}
+
+**Rodrigo Peixoto Timbó**
+
+[LinkedIn](https://www.linkedin.com/in/rodrigotimbo/)
+
+:::
+
+:::

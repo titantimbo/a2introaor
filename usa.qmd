@@ -1,0 +1,23 @@
+---
+title: "O Caso Americano" 
+format: html 
+editor: visual 
+editor_options:   
+  chunk_output_type: console
+---
+
+O artigo "O Blue Shift na Eleição de 2020", escrito por Charles Stewart, analisa o fenômeno conhecido como "blue shift" observado durante as eleições presidenciais dos Estados Unidos em 2020. O termo refere-se à tendência de os resultados eleitorais mudarem em favor dos candidatos democratas à medida que a contagem de votos por correio e provisórios é concluída.
+
+Stewart utiliza dados eleitorais de diversos estados-chave para examinar a discrepância entre os resultados iniciais e finais. A análise considera fatores como:
+
+-   **Processamento de votos por correio**: Estados com políticas diferentes sobre quando e como contar votos antecipados.
+-   **Impacto da pandemia**: Aumento significativo no uso de votos por correio devido à COVID-19.
+-   **Tendências partidárias**: Preferências distintas entre eleitores que votaram pessoalmente e aqueles que votaram por correio.
+
+O estudo identifica que o "blue shift" foi mais pronunciado em estados onde os votos por correio foram contabilizados após o dia da eleição. Os principais achados incluem:
+
+-   **Democratas preferem votos por correio**: Houve uma tendência maior de eleitores democratas utilizarem votos por correio.
+-   **Variação entre estados**: Estados como Pensilvânia e Wisconsin exibiram blue shifts mais significativos devido às suas políticas de contagem.
+-   **Nenhuma evidência de fraude**: As mudanças nos resultados são atribuídas a procedimentos normais de contagem, não a irregularidades.
+
+Charles Stewart conclui que o "blue shift" é um fenômeno previsível resultante das variações nos métodos de votação e contagem de votos. Ele destaca a importância de educar o público sobre esse processo para evitar desinformação e reforçar a confiança nas eleições.

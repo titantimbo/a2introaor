@@ -1,0 +1,25 @@
+---
+title: "Eleições Brasileiras - Distribuição dos Votos ao Longo da Apuração" 
+date-format: short 
+editor: visual
+---
+
+Em todas as eleições, há dinâmicas complexas que determinam os resultados finais, e um fenômeno que tem chamado atenção recentemente é o **"blue shift"**. Esse termo, que se originou no cenário político norte-americano, descreve uma tendência onde os resultados finais de uma eleição se movem em direção aos candidatos democratas à medida que mais votos são contados, especialmente votos de regiões urbanas e votos feitos antecipadamente ou pelos Correios. Acadêmicos americanos atribuem esse efeito a uma série de fatores. Dentre eles:
+
+-   Condados maiores tendem a ser mais democratas e seus votos demoram mais para serem apurados.
+
+-   A maioria dos votos enviados pelos correios americanos são democratas. Esses votos demoram mais a serem apurados.
+
+Nosso objetivo é investigar se há evidências de um fenômeno semelhante nas eleições brasileiras.
+
+Este site tem como objetivo explorar essa questão, aplicando uma série de métodos estatísticos para analisar os resultados eleitorais em diferentes regiões do Brasil. Queremos entender como a contagem de votos evolui ao longo do tempo em diferentes estados e cidades e se há um padrão consistente que favorece um candidato mais democrata na fase final da contagem.
+
+Além disso, abordaremos questões como:
+
+1.  Como o comportamento dos eleitores brasileiros se assemelha ou difere dos padrões observados em outros países?
+
+2.  Existe um efeito significativo relacionado ao tempo e ao tipo de votos (urnas eletrônicas, votos antecipados, etc.)?
+
+3.  Quais regiões do Brasil mostram um padrão de **"blue shift"** mais forte?
+
+Este estudo é inspirado por análises como as de Curiel, Stewart III, e Williams (2020), que examinaram o "blue shift" nas eleições norte-americanas de 2020. Você pode acessar o paper completo [aqui](https://electionlab.mit.edu/sites/default/files/2021-04/Blue-Shift-in-2020-Election.pdf "The Blue Shift in the 2020 elections").

@@ -1,0 +1,15 @@
+---
+title: "Referências" 
+format: html 
+editor: visual 
+editor_options:   
+  chunk_output_type: console
+---
+
+1.  Stewart, C. (2021). *The Blue Shift in the 2020 Election*. Journal of Election Studies.
+2.  Tribunal Superior Eleitoral (TSE). Disponível em: <https://www.tse.jus.br>. Acesso em: 10 nov. 2024.
+3.  OpenAI. ChatGPT. Disponível em: <https://openai.com/blog/chatgpt>. Acesso em: 10 nov. 2024.
+4.  Quarto. Documentação Oficial. Disponível em: <https://quarto.org>. Acesso em: 10 nov. 2024.
+5.  R Core Team. (2023). *R: A Language and Environment for Statistical Computing*. R Foundation for Statistical Computing, Vienna, Austria. Disponível em: <https://www.r-project.org>.
+6.  Governo Federal do Brasil. Portal Gov.br. Disponível em: <https://www.gov.br>. Acesso em: 10 nov. 2024.
+7.  GitHub. Plataforma de Hospedagem de Código. Disponível em: <https://github.com>. Acesso em: 10 nov. 2024.
