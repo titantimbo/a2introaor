@@ -6,9 +6,11 @@ format:
   html:
     css: styles.css
     fig-format: png
+    markdown:
+      external-link: true
 ---
 
-Este site foi elaborado como uma tarefa para a disciplina de **Introdução ao R** da FGV EPGE. A disciplina é ministrada pelo professor [Diogo Tavares Robaina](https://epge.fgv.br/pt/professor/diogo-tavares-robaina). A elaboração do site foi feita pelos alunos:
+Este site foi elaborado como uma tarefa para a disciplina de **Introdução ao R** da FGV EPGE. A disciplina é ministrada pelo professor [Diogo Tavares Robaina](https://epge.fgv.br/pt/professor/diogo-tavares-robaina){target="_blank"}. A elaboração do site foi feita pelos alunos:
 
 ::: {.columns}
 
@@ -18,7 +20,7 @@ Este site foi elaborado como uma tarefa para a disciplina de **Introdução ao R
 
 **Fernando Puppin**
 
-[LinkedIn](https://www.linkedin.com/in/fernandopuppin/)
+[LinkedIn](https://www.linkedin.com/in/fernandopuppin/){target="_blank"}
 
 :::
 
@@ -28,7 +30,7 @@ Este site foi elaborado como uma tarefa para a disciplina de **Introdução ao R
 
 **João Pedro Gabrich**
 
-[LinkedIn](https://www.linkedin.com/in/jo%C3%A3o-pedro-gabrich-8b9197289/)
+[LinkedIn](https://www.linkedin.com/in/jo%C3%A3o-pedro-gabrich-8b9197289/){target="_blank"}
 
 :::
 
@@ -39,7 +41,7 @@ Este site foi elaborado como uma tarefa para a disciplina de **Introdução ao R
 
 **Joanna Knop Meire**
 
-[LinkedIn](https://www.linkedin.com/in/joannakm/)
+[LinkedIn](https://www.linkedin.com/in/joannakm/){target="_blank"}
 
 :::
 
@@ -49,7 +51,7 @@ Este site foi elaborado como uma tarefa para a disciplina de **Introdução ao R
 
 **Luiz Filipe Peres**
 
-[LinkedIn](https://www.linkedin.com/in/luiz-filipe-peres/)
+[LinkedIn](https://www.linkedin.com/in/luiz-filipe-peres/){target="_blank"}
 
 :::
 
@@ -59,7 +61,7 @@ Este site foi elaborado como uma tarefa para a disciplina de **Introdução ao R
 
 **Rodrigo Peixoto Timbó**
 
-[LinkedIn](https://www.linkedin.com/in/rodrigotimbo/)
+[LinkedIn](https://www.linkedin.com/in/rodrigotimbo/){target="_blank"}
 
 :::
 
