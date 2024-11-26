@@ -12,16 +12,19 @@ website:
         text: "EUA"
       - href: br.qmd
         text: "Brasil"
-      - href: ref.qmd
-        text: "Referências"
       - href: about.qmd
         text: "Sobre"
+      - href: ref.qmd
+        text: "Referências"
+
 
 format:
   html:
     theme: cosmo
     css: styles.css
     toc: true
+    markdown:
+      external-link: true
 
 editor: visual
 
